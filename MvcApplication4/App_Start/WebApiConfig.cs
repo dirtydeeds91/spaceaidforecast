@@ -11,7 +11,8 @@ namespace MvcApplication4
         [EnableCors(origins: "http://spaceaidproject.eu", headers: "*", methods: "*")]
         public static void Register(HttpConfiguration config)
         {
-            config.EnableCors();
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",

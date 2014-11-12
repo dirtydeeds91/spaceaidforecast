@@ -1,5 +1,4 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,9 +23,7 @@ namespace MvcApplication4.Controllers
             string resultString = objReader.ReadToEnd();
             objReader.Close();
             result.Close();
-
-            string json = JsonConvert.SerializeObject(resultString);
-            return json;
+            return resultString;
         }
 
         [HttpGet]
@@ -41,8 +38,7 @@ namespace MvcApplication4.Controllers
             objReader.Close();
             result.Close();
 
-            string json = JsonConvert.SerializeObject(resultString);
-            return json;
+            return resultString;
         }
     }
 }
